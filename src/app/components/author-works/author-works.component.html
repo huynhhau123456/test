@@ -1,0 +1,17 @@
+<div>
+  <h1>Works by this Author</h1>
+  <table class="bordered-table">
+    <thead>
+      <tr>
+        <th>Danh sách các tác phẩm</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of authorWorks.entries">
+        <td>{{ entry.title }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button (click)="goBack()">Quay về</button>

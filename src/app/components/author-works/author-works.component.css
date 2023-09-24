@@ -1,0 +1,27 @@
+/* CSS cho bao quanh danh sách */
+.list-container {
+  border: 1px solid #ccc;
+  /* Đường bao quanh danh sách */
+  padding: 10px;
+  /* Khoảng cách bên trong bao quanh danh sách */
+  margin: 10px;
+  /* Khoảng cách từ nội dung đến bao quanh danh sách */
+  border-radius: 5px;
+  /* Để làm cho khung có góc bo tròn */
+}
+
+/* CSS cho bảng có đường bao quanh */
+.bordered-table {
+  border-collapse: collapse;
+  /* Loại bỏ khoảng cách giữa các đường viền */
+  width: 50%;
+  /* Đảm bảo bảng rộng 100% của phần tử cha */
+}
+
+.bordered-table th,
+.bordered-table td {
+  border: 1px solid #ccc;
+  /* Đường bao quanh mỗi ô */
+  padding: 8px;
+  /* Khoảng cách bên trong mỗi ô */
+}

@@ -1,0 +1,33 @@
+/* Trang trí bảng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Trang trí các dòng chẵn và lẻ trong bảng */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Trang trí ô đầu tiên trong mỗi dòng */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Trang trí các ô */
+td {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+/* Trang trí tiêu đề cột */
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #dddddd;
+}

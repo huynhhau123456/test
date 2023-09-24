@@ -1,0 +1,52 @@
+<div>
+    <h1>Tra cứu nhà văn</h1>
+    <form (submit)="searchAuthors()">
+        <input [(ngModel)]="query" placeholder="Nhập tên tác giả" name="authorName" />
+        <button type="submit">Tìm kiếm</button>
+    </form>
+
+    <div *ngIf="authors.length > 0">
+        <h2>Kết quả tác giả:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên tác giả</th>
+                    <th>Key</th>
+
+                    <th>Chi tiết tác giả</th>
+
+                    <!-- Thêm các cột khác nếu cần -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let author of authors">
+                    <td>{{ author.name }}</td>
+                    <td>{{ author.key }}</td>
+
+                    <!-- Hiển thị các thông tin khác của tác giả trong các cột -->
+                    <td>
+                        <button mat-button (click)="author.key && openAuthorDetailsModal(author.key)">View
+                            Details</button>
+                    </td>
+                    <td>
+                        <a [routerLink]="['/authors', author.key, 'works']">View Works</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="isLoading">
+        <p>Đang tìm kiếm...</p>
+    </div>
+
+    <div *ngIf="authors.length === 0 && !isLoading">
+        <p>Không tìm thấy tác giả nào phù hợp.</p>
+    </div>
+    <div class="pagination">
+        <button (click)="prevPage()" [disabled]="offset === 0">Trang trước</button>
+        <span>Trang {{ getCurrentPage() }}</span>
+        <button (click)="nextPage()" [disabled]="authors.length < limit">Trang sau</button>
+    </div>
+
+</div>

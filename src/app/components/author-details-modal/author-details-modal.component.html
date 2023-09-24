@@ -1,0 +1,11 @@
+<div class="author-details">
+  <h2 class="author-name">{{ authorInfo.name }}</h2>
+  <p *ngIf="authorInfo.personal_name" class="personal-name"><strong>Personal Name:</strong> {{ authorInfo.personal_name
+    }}</p>
+  <p *ngIf="authorInfo.birth_date" class="birth-date"><strong>Birth Date:</strong> {{ authorInfo.birth_date }}</p>
+  <p *ngIf="authorInfo.death_date" class="death-date"><strong>Death Date:</strong> {{ authorInfo.death_date }}</p>
+  <p *ngIf="authorInfo.alternate_names && authorInfo.alternate_names.length" class="alternate-names">
+    <strong>Alternate Names:</strong> {{ authorInfo.alternate_names.join(', ') }}
+  </p>
+  <button mat-button class="close-button" (click)="closeDialog()">Close</button>
+</div>
